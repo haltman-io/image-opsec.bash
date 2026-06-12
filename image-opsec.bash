@@ -1,29 +1,3 @@
-# image-opsec.bash
-drop metada from all medias inside a directory (linux only)
-
-## dependencies (ubuntu)
-```console
-extencil@ubuntu:~$ sudo apt update -y
-```
-```console
-extencil@ubuntu:~$ sudo apt install -y libimage-exiftool-perl
-```
-
-## how to install `git clone` (recommended)
-```console
-extencil@ubuntu:~$ git clone https://github.com/haltman-io/image-opsec.bash
-extencil@ubuntu:~$ cd ./image-opsec.bash
-extencil@ubuntu:~$ sudo mv ./image-opsec /usr/local/bin/image-opsec
-extencil@ubuntu:~$ sudo chmod +x /usr/local/bin/image-opsec
-extencil@ubuntu:~$ image-opsec
-Usage: image-opsec <directory> --name <prefix>
-Example: image-opsec /tmp/images --name team-logo
-```
-
-## how to install `just COPY, PASTE and hit ENTER`
-
-```
-sudo tee /usr/local/bin/image-opsec >/dev/null <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -103,7 +77,3 @@ rmdir "$TMPDIR"
 
 echo
 echo "Done. Processed $COUNT image(s)."
-EOF
-
-sudo chmod +x /usr/local/bin/image-opsec
-```
